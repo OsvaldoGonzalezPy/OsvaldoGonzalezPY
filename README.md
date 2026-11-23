@@ -73,7 +73,7 @@ infra:       Linux · NGINX · Apache Tomcat · Git
 
 ### 🏗️ Áreas de especialización
 
-<table width="100%">
+<table align="center" width="100%">
 <tr>
 <td width="50%" valign="top">
 
@@ -142,9 +142,15 @@ flowchart LR
 
 #### Arquitectura con la que trabajo
 
+El servidor web de entrada (**NGINX** o **Apache HTTP Server**) se elige según las necesidades y requerimientos de cada proyecto.
+
 ```mermaid
 flowchart LR
-    U((Usuario)) --> N[NGINX] --> T[Apache Tomcat] --> O[ORDS] --> A[Oracle APEX] --> D[(Oracle Database)]
+    U((Usuario)) --> N[NGINX]
+    U --> H[Apache HTTP Server]
+    N --> T[Apache Tomcat]
+    H --> T
+    T --> O[ORDS] --> A[Oracle APEX] --> D[(Oracle Database)]
 
     style A fill:#1E3A5F,color:#fff
     style D fill:#0B1F3A,color:#fff
